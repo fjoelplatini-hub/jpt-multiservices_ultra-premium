@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JPT Multi-Services</title>
+
+<meta name="description" content="JPT Multi-Services : création de sites web, design, marketing digital et solutions modernes au Cameroun.">
+
+<meta name="keywords" content="site web Cameroun, design, JPT Multi-Services">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- AOS Animation -->
+<link rel="stylesheet"
+href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+
+<link rel="icon" href="logof.jpg">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#060b16;
+color:white;
+overflow-x:hidden;
+transition:0.4s;
+}
+
+/* LIGHT MODE */
+
+body.light-mode{
+background:#f5f7fb;
+color:#111827;
+}
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 25px;
+background:rgba(5,10,20,0.92);
+backdrop-filter:blur(12px);
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo{
+height:55px;
+width:55px;
+object-fit:cover;
+border-radius:12px;
+}
+
+.brand h1{
+color:#FFD166;
+font-size:22px;
+font-weight:700;
+}
+
+/* NAV */
+
+nav{
+display:flex;
+gap:20px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+transition:0.3s;
+font-size:15px;
+}
+
+nav a:hover{
+color:#00C2FF;
+}
+
+/* MENU MOBILE */
+
+.menu-toggle{
+display:none;
+font-size:28px;
+cursor:pointer;
+color:white;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:120px 20px;
+background:
+linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.75)),
+url('hub2.jpg') center/cover;
+}
+
+.hero h2{
+font-size:55px;
+color:#FFD166;
+font-weight:700;
+margin-bottom:15px;
+}
+
+.hero p{
+max-width:850px;
+margin-top:15px;
+color:#d1d5db;
+font-size:18px;
+line-height:1.8;
+}
+
+/* BUTTONS */
+
+.btn{
+padding:14px 24px;
+border-radius:14px;
+text-decoration:none;
+font-weight:600;
+margin:8px;
+display:inline-block;
+transition:0.3s;
+box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+.btn:hover{
+transform:translateY(-4px);
+}
+
+.btn-primary{
+background:#25D366;
+color:white;
+}
+
+.btn-secondary{
+background:#FFD166;
+color:black;
+}
+
+/* SECTIONS */
+
+section{
+padding:90px 20px;
+}
+
+.section-title{
+text-align:center;
+font-size:38px;
+color:#FFD166;
+margin-bottom:50px;
+font-weight:700;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:28px;
+}
+
+/* CARDS */
+
+.card{
+background:linear-gradient(145deg,#101b31,#111c34);
+padding:22px;
+border-radius:24px;
+text-align:center;
+transition:0.4s;
+box-shadow:0 10px 25px rgba(0,0,0,0.35);
+border:1px solid rgba(255,255,255,0.04);
+overflow:hidden;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+/* 🔥 IMAGES PREMIUM FIX */
+
+.card img{
+width:100%;
+height:auto;
+max-height:420px;
+object-fit:contain;
+border-radius:18px;
+margin-bottom:18px;
+background:#0f172a;
+padding:6px;
+display:block;
+}
+
+/* VIDEO FIX */
+
+.video-section{
+text-align:center;
+}
+
+.video-section video{
+width:100%;
+max-width:950px;
+height:auto;
+object-fit:contain;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* PREMIUM BOX */
+
+.premium-box{
+background:linear-gradient(135deg,#00C2FF,#005bea);
+padding:50px;
+border-radius:28px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.35);
+}
+
+.premium-box h2{
+font-size:35px;
+margin-bottom:18px;
+}
+
+.premium-box p{
+font-size:17px;
+line-height:1.8;
+}
+
+/* TESTIMONIALS */
+
+.testimonial img{
+width:90px;
+height:90px;
+object-fit:cover;
+border-radius:50%;
+margin:auto;
+margin-bottom:15px;
+border:3px solid #FFD166;
+}
+
+/* CONTACT */
+
+.contact-box{
+max-width:700px;
+margin:auto;
+background:#111c34;
+padding:35px;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,0.35);
+}
+
+.contact-box input,
+.contact-box textarea{
+width:100%;
+padding:15px;
+border:none;
+border-radius:12px;
+margin-bottom:15px;
+background:#0f172a;
+color:white;
+font-size:15px;
+}
+
+.contact-box textarea{
+height:140px;
+resize:none;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:50px 20px;
+background:#02050b;
+}
+
+footer img{
+height:75px;
+width:75px;
+object-fit:cover;
+border-radius:18px;
+margin-bottom:15px;
+}
+
+/* WHATSAPP */
+
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+width:62px;
+height:62px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+color:white;
+text-decoration:none;
+z-index:999;
+box-shadow:0 8px 25px rgba(0,0,0,0.35);
+}
+
+/* THEME BUTTON */
+
+.theme-toggle{
+position:fixed;
+bottom:20px;
+left:20px;
+z-index:999;
+}
+
+.theme-toggle button{
+width:55px;
+height:55px;
+border-radius:50%;
+border:none;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+color:white;
+font-size:18px;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 8px 20px rgba(0,0,0,0.35);
+}
+
+.theme-toggle button:hover{
+transform:scale(1.1);
+background:#FFD166;
+color:black;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h2{
+font-size:34px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.menu-toggle{
+display:block;
+}
+
+nav{
+position:absolute;
+top:80px;
+right:-100%;
+width:240px;
+background:#111c34;
+flex-direction:column;
+padding:20px;
+border-radius:18px;
+transition:0.4s;
+}
+
+nav.active{
+right:20px;
+}
+
+.btn{
+width:90%;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- THEME -->
+
+<div class="theme-toggle">
+<button onclick="toggleTheme()" title="Changer le thème">
+🌙
+</button>
+</div>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="brand">
+<img src="logof.jpg" class="logo">
+<h1>JPT Multi-Services</h1>
+</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+<nav id="navMenu">
+<a href="#services">Services</a>
+<a href="#boutique">Boutique</a>
+<a href="#temoignages">Témoignages</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div data-aos="fade-up">
+
+<h2>JPT Multi-Services</h2>
+
+<p>
+Création de sites web, design graphique, marketing digital,
+vente d'appareils électroniques et solutions digitales modernes.
+</p>
+
+<br>
+
+<a class="btn btn-primary"
+href="https://wa.me/237693984180">
+WhatsApp
+</a>
+
+<a class="btn btn-secondary"
+href="#services">
+Services
+</a>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<h2 class="section-title" data-aos="fade-up">
+Nos Services
+</h2>
+
+<div class="grid">
+
+<div class="card" data-aos="zoom-in">
+<img src="siteweb.jpg" loading="lazy">
+<h3>Creation des Sites Web</h3>
+<p>
+Sites vitrines moderne Professionel PREMIUM
+et ULTRA PREMIUM pour entreprises locales
+et internationales.
+</p>
+</div>
+
+<div class="card" data-aos="zoom-in">
+<img src="designlogo.jpg" loading="lazy">
+<h3>Design et Logo</h3>
+<p>
+Création d’affiches professionnelles et logos modernes.
+</p>
+</div>
+
+<div class="card" data-aos="zoom-in">
+<img src="formation.jpg" loading="lazy">
+<h3>Formation en informatique</h3>
+<p>
+Formation digitale moderne et accompagnement personnalisé.
+</p>
+</div>
+
+<div class="card" data-aos="zoom-in">
+<img src="Electronic.jpg" loading="lazy">
+<h3>Électronique</h3>
+<p>
+Ordinateurs, téléphones et accessoires disponibles.
+Découvrez une sélection d’appareils électroniques modernes.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- BOUTIQUE -->
+
+<section id="boutique">
+
+<h2 class="section-title" data-aos="fade-up">
+Boutique Premium
+</h2>
+
+<div class="premium-box" data-aos="fade-up">
+
+<h2>🔥 Promotions Disponibles</h2>
+
+<p>
+Ordinateurs, téléphones, accessoires, studio web
+et équipements modernes disponibles.
+</p>
+
+<br>
+
+<a class="btn btn-primary"
+href="https://wa.me/237693984180">
+Commander maintenant
+</a>
+
+</div>
+
+<br><br>
+
+<div class="grid">
+
+<div class="card" data-aos="fade-up">
+<img src="ordinateur.jpg" loading="lazy">
+<h3>Ordinateurs et Téléphones</h3>
+</div>
+
+<div class="card" data-aos="fade-up">
+<img src="hub.jpg" loading="lazy">
+<h3>Studio de Création Web</h3>
+</div>
+
+<div class="card" data-aos="fade-up">
+<img src="accessoires.jpg" loading="lazy">
+<h3>Accessoires Téléphoniques</h3>
+</div>
+
+<div class="card" data-aos="fade-up">
+<img src="jeux.jpg" loading="lazy">
+<h3>Console Jeux Vidéo PS4</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- VIDEO -->
+
+<section>
+
+<h2 class="section-title" data-aos="fade-up">
+Présentation
+</h2>
+
+<div class="video-section" data-aos="zoom-in">
+
+<video controls autoplay muted loop>
+<source src="presentation.mp4">
+</video>
+
+</div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section id="temoignages">
+
+<h2 class="section-title" data-aos="fade-up">
+Témoignages Clients
+</h2>
+
+<div class="grid">
+
+<div class="card testimonial" data-aos="fade-up">
+<img src="p1.jpg">
+<h3>Client satisfait</h3>
+<p>
+“Service rapide et très professionnel.”
+</p>
+</div>
+
+<div class="card testimonial" data-aos="fade-up">
+<img src="p3.jpg">
+<h3>Entreprise locale</h3>
+<p>
+“Excellent design et accompagnement.”
+</p>
+</div>
+
+<div class="card testimonial" data-aos="fade-up">
+<img src="p4.jpg">
+<h3>Client VIP</h3>
+<p>
+“Je recommande fortement JPT Multi-Services.”
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2 class="section-title" data-aos="fade-up">
+Contact
+</h2>
+
+<div class="contact-box" data-aos="zoom-in">
+
+<form action="https://formsubmit.co/jptmultiservices@gmail.com"
+method="POST">
+
+<input type="text"
+name="Nom"
+placeholder="Votre nom"
+required>
+
+<input type="email"
+name="Email"
+placeholder="Votre email"
+required>
+
+<textarea name="Message"
+placeholder="Votre message"
+required></textarea>
+
+<button class="btn btn-primary" type="submit">
+Envoyer
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<img src="logof.jpg">
+
+<h3 style="color:#FFD166;">
+JPT Multi-Services
+</h3>
+
+<br>
+
+<p>
+Création de sites web • Design graphique • Solutions digitales modernes
+</p>
+
+<br>
+
+<p>
+© 2026 JPT Multi-Services
+</p>
+
+</footer>
+
+<!-- WHATSAPP -->
+
+<a class="whatsapp-float"
+href="https://wa.me/237693984180">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- AOS -->
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+
+AOS.init({
+duration:1000,
+once:true
+});
+
+function toggleMenu(){
+document.getElementById("navMenu")
+.classList.toggle("active");
+}
+
+function toggleTheme(){
+document.body.classList.toggle("light-mode");
+}
+
+</script>
+
+</body>
+</html>
